@@ -1,0 +1,5 @@
+User-agent: *  
+Allow: /  
+Disallow: /admin/  
+Disallow: /private/  
+Sitemap: http://www.nou-grif.ru/sitemap.xml

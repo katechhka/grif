@@ -1,0 +1,875 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  line-height: 1.15;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+main {
+  display: block;
+}
+
+
+
+
+
+a {
+  background-color: transparent;
+  text-decoration: none
+  transition .7s ease
+}
+
+abbr[title] {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  line-height: inherit;
+  border: 1px solid currentColor;
+}
+
+button {
+  overflow: visible;
+  text-transform: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+  padding: 1px 6px;
+}
+
+input {
+  overflow: visible;
+}
+
+input,
+textarea {
+  padding: 1px;
+}
+
+fieldset {
+  border: 1px solid currentColor;
+  margin: 0 2px;
+}
+
+legend {
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+select {
+  text-transform: none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=color] {
+  background: inherit;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+::-webkit-search-decoration,
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  color: inherit;
+  overflow: visible;
+}
+
+dl,
+ol,
+ul {
+  margin: 0 0;
+  
+}
+
+ol ol,
+ol ul,
+ol dl,
+ul ol,
+ul ul,
+ul dl,
+dl ol,
+dl ul,
+dl dl {
+  margin: 0;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border: 0;
+  width: 100%
+  height: auto
+  object-fit: cover
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+table {
+  text-indent: 0;
+  border-color: inherit;
+}
+
+details {
+  display: block;
+}
+
+dialog {
+  background-color: inherit;
+  border: solid;
+  color: inherit;
+  display: block;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: fit-content;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+// Resolution
+xBase = 1700
+base = 1920
+wide = 1600
+screen = 1440
+desktop = 1300
+tabletLarge = 1280
+tablet = 1024
+mobile = 768
+sMobile = 550
+
+// @media
+max(size)
+  @media all and (max-width: size px)
+    {block}
+min(size)
+  @media all and (min-width: size px)
+    {block}
+between(sizefrom, sizeto)
+  @media(min-width: sizefrom px) and (max-width: sizeto px)  
+    {block}
+
+max_phone(width,height)
+  @media (min-width: mobile px) and (max-height: height px)
+    {block}
+  @media all and (max-width: width px)
+    {block}
+
+noUserSelect()
+  -webkit-user-select none
+  -moz-user-select none
+  -ms-user-select none
+
+//transition time
+  $trans = .7s ease
+
+//styles////////////////////
+body  
+    width 100%
+    position relative
+    max-width: 1920px
+    margin 0 auto 
+    font-family: "Montserrat"
+    padding-top 72px
+    font-weight: 400
+    background: #FFFFFF
+    font-size: 16px
+    line-height: 24px
+    +min(tabletLarge)
+        font-size: 24px
+        line-height:32px
+        padding-top 120px
+    &.open-popup
+      &:before
+        content ''
+        position absolute
+        width 100%
+        height 100%
+        top 0
+        left 0
+        z-index 6
+        background: rgba(0,0,0,0.25)
+.container 
+    padding-left 16px
+    padding-right 16px
+    width 100%
+    +min(mobile)
+        padding-left 48px
+        padding-right 48px
+    +min(xBase)
+        padding-left 190px
+        padding-right 190px
+.h1 
+    text-transform: uppercase
+    font-size: 24px
+    line-height: 30px
+    +min(mobile)
+      font-size: 30px
+      line-height: 40px
+    font-weight: 700
+    +min(tabletLarge)
+        font-size: 50px
+        line-height: 60px
+
+.h1-title
+    text-align: center 
+    margin-bottom 30px
+    +min(tabletLarge)
+        margin-bottom 50px
+.pt  
+    padding-top 60px
+    +min(tabletLarge)
+        padding-top 90px
+.pb  
+    padding-bottom 60px  
+    +min(tabletLarge)
+        padding-bottom 90px
+.yellow-btn
+  padding 16px 28px
+  background-color: #FFDA16
+  display flex 
+  align-items: center 
+  justify-content: center 
+  font-size: 20px
+  line-height: 24px
+  font-weight: 600
+  +min(tabletLarge)
+    font-size: 24px
+    line-height: 28px
+    padding 16px 48px
+  width max-content
+  color #000000
+
+.header 
+    background: #000000
+    width 100%
+    position fixed
+    display flex 
+    z-index 2
+    align-items: center
+    padding-top 14px
+    padding-bottom 14px
+    height 72px
+    max-width: 1920px
+    top 0 
+    left 50%
+    transform: translateX(-50%)
+    +min(tabletLarge)
+      height 120px
+    &__logo 
+    
+        width 50px
+        height 50px
+        +min(tabletLarge)
+            width 91px
+            height 91px
+    &__nav 
+        display flex 
+        align-items: center 
+        gap: 20px
+        margin-left: auto 
+        +max(1279px)
+            display none
+        a  
+            color #FFFFFF
+            font-weight: 500
+            font-size: 15px
+            line-height: 24px
+            +min(xBase)
+                font-size: 17px
+            &:hover 
+                color #FFDA16
+                
+    &__burger 
+        width 41px
+        margin-left: auto
+        +min(tabletLarge)   
+            display none
+        &:hover 
+          cursor pointer
+.contacts 
+    &__wrap 
+        display flex 
+        flex-direction: column 
+        text-align: center 
+        align-items: center
+        gap 20px
+        +min(tabletLarge)
+            gap 36px
+        &-item 
+            display: flex 
+            flex-direction: column 
+            max-width: 962px
+            span 
+                font-weight: 600
+            a  
+                color #000000
+                text-decoration: underline
+
+.footer 
+    background: #000000
+    width 100%
+    display flex 
+    flex-direction: column 
+    align-items: center 
+    text-align: center 
+    padding-top 30px
+    padding-bottom 30px
+    gap 20px
+    margin-top 60px
+    color #FFFFFF
+    font-size: 14px
+    line-height: 20px
+    +min(tabletLarge)
+        margin-top 92px
+    +min(tablet)
+        flex-direction: row 
+        text-align: left
+        justify-content: space-between
+
+    &__wrap3 
+        display flex 
+        flex-direction: column 
+        flex-shrink: 0
+        gap 14px
+        +min(tablet)
+            flex-direction: row 
+        +min(tabletLarge)
+            gap 72px
+        p   
+            &:last-child 
+                +min(tablet)
+                    text-align: right
+
+
+        a   
+            color #FFFFFF
+    &__wrap1
+        width 60px
+        flex-shrink: 0
+        +min(tabletLarge)
+            width 91px
+    &__wrap2 
+        max-width: 300px
+        +min(tabletLarge)
+            max-width: 360px
+.price 
+  table 
+    tr 
+      &:not(&:first-child)
+        td 
+          border-top 12px solid #FFFFFF
+      td 
+        padding 20px
+        
+        line-height: 32px
+        font-weight: 500
+        +max(1279px)
+          padding 6px 10px
+          line-height: 24px
+        &:first-child
+          background-color: #E9E9E9
+        &:last-child
+          text-align: center
+          width 20%
+          color #AA1D00
+          font-weight: 700
+          +max(1279px)
+            text-align: left
+          +max(767px)
+            width 35%
+          span  
+            text-decoration: line-through
+            font-weight: 400
+            color #000000
+            padding-right 10px
+            +max(1279px)
+              display block
+.picture 
+  overflow hidden
+  width 100%
+  height 200px
+  display: flex 
+  justify-content: center 
+  align-items: center
+  +min(mobile)
+    height 264px
+  +min(tablet)
+    height 364px
+  +min(tabletLarge)
+    height 564px 
+  img 
+    width 100%
+    height 100% 
+.teaching 
+  background-color: #FFFFFF
+  &__text
+    display flex 
+    flex-direction: column 
+    gap 20px
+    +min(tabletLarge)
+      gap 24px
+    .big-text 
+      font-weight: 700
+      font-size: 28px
+      +max(1279px)
+        font-size: 16px
+ul  
+  display flex 
+  flex-direction: column 
+  gap 12px
+  li  
+    list-style-type: none
+    padding-left 32px
+    position relative
+    &:before 
+      content ''
+      position absolute
+      background-color: #000000
+      transform: rotate(45deg) translateY(-50%) 
+      width 8px
+      height 8px
+      left 0
+      top 50%
+.veapon 
+  display flex 
+  flex-direction: column 
+  position relative
+  img  
+    position absolute
+    z-index -1
+    right 0
+    bottom 0
+  &__btn 
+    display flex 
+    align-items: center 
+    gap 12px
+    font-weight: 600
+    margin-top 24px
+    +min(mobile)
+      display none
+    svg  
+      transition .7s ease
+    &._open 
+      svg   
+        transform: rotate(180deg)
+  &__text 
+    display flex 
+    flex-direction: column
+    gap 20px
+    transition .7s ease
+    +min(tabletLarge)
+      gap 24px
+    +max(767px)
+      max-height 380px
+      overflow hidden
+    &._open 
+      max-height 10000px
+    div  
+      display flex 
+      flex-direction: column 
+      gap 16px
+    span  
+      font-weight: 700
+      font-size: 28px
+      line-height: 32px
+      display block
+      margin 20px 0
+      +max(1279px)
+        font-size: 20px
+        line-height: 28px
+        margin 10px 0
+    ul  
+      display flex 
+      flex-direction: column 
+      gap 12px
+      li  
+        list-style-type: none
+        padding-left 32px
+        position relative
+        &:before 
+          content ''
+          position absolute
+          background-color: #000000
+          transform: rotate(45deg) translateY(-50%) 
+          width 8px
+          height 8px
+          left 0
+          top 50%
+  .yellow-btn
+    margin 54px auto 0 auto
+    +max(1279px)
+      margin 40px auto 0 auto
+.mainpage 
+  position relative
+  width 100%
+  overflow hidden
+  padding-top 60px
+  padding-bottom 60px
+  min-height: 490px
+  +min(tablet)
+    min-height: 518px
+  +min(tabletLarge) 
+    padding-top 80px
+    padding-bottom 100px
+  +min(xBase) 
+    padding-top 116px
+    padding-bottom 116px
+    min-height: 962px
+  &__wrap  
+    color #FFFFFF 
+    position relative
+    +min(mobile)
+      max-width: 500px;
+    +min(tablet)
+      max-width: 600px;
+    +min(tabletLarge)
+      max-width: 700px;
+    +min(xBase)
+      max-width: 900px;
+    .big-text 
+      margin-top 32px
+      font-size: 16px
+      display flex 
+      flex-direction: column 
+      gap 8px
+      margin-bottom 40px
+      +min(tablet)
+        font-size: 20px
+      +min(tabletLarge)
+        font-size: 32px
+        line-height: 50px
+        margin-top 54px
+        margin-bottom 54px
+  img  
+    height 100%
+    width auto 
+    min-width: 100%
+    position absolute
+    filter brightness(0.8);
+    top 0
+    right -200px
+    +min(mobile)
+      right: 0
+  
+.info
+  &__wrap 
+    display flex 
+    flex-direction: column 
+    gap 12px
+    +min(mobile)
+      flex-wrap: wrap
+      flex-direction: row
+      gap 24px
+    &-item 
+      padding 12px
+      display flex 
+      background-color: #E9E9E9
+      gap 20px
+      transition .5s ease
+      +min(mobile)
+        min-height: 120px
+        width calc((100% - 24px)/2)
+      +min(tablet)
+        width calc((100% - 48px)/3)
+      +min(tabletLarge)
+        padding 28px
+        min-height: 190px
+      &:last-child  
+        +min(mobile)
+          margin 0 auto 0 0
+  
+      &:hover 
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
+        cursor pointer
+      &:nth-last-of-type(2)
+        +min(tablet)
+          margin 0 0 0 auto
+    
+
+      span  
+        font-weight: 600
+        margin-left: auto
+        align-self: flex-end
+        text-align: right
+      &>img 
+        width 40px
+        height 40px
+        mix-blend-mode: multiply
+        +min(tabletLarge)
+          width 80px
+          height 80px
+
+.menu 
+  background: #FFFFFF
+  position fixed 
+  top 0
+  height 100dvh
+  width 0
+  padding 92px 40px
+  z-index 10
+  opacity 0 
+  pointer-events: none 
+  right -10000px
+  transition right 0.7s ease
+  &._open  
+    opacity 1
+    pointer-events: all 
+    right 0
+    width 300px
+  +min(tabletLarge)
+    display none
+  &__close 
+    width 24px
+    height 24px
+    position absolute
+    top 24px
+    right 24px
+    &:hover 
+      cursor pointer
+  &__wrap 
+    display flex 
+    flex-direction: column 
+    gap 20px
+    font-weight: 500
+    a   
+      color #000000
+      &:hover 
+        color #FFDA16
+
+
+.popup
+  position fixed 
+  background-color: #FFFFFF
+  width calc(100% - 40px)
+  max-width 1542px
+  left 50%
+  top 50%
+  transform: translate(-50%,-50%)
+  z-index 10
+  padding 60px
+
+  +min(mobile)
+    max-height: 700px
+    height max-content
+  overflow auto
+  opacity 0
+  visibility: hidden
+  pointer-events: none
+  transition .5s ease
+  +max(767px)
+    width 100%
+    height 100dvh
+    padding 40px 20px
+  &._open  
+    opacity 1
+    pointer-events: all 
+    visibility: visible
+
+  &__close 
+    position absolute
+    width 24px
+    height 24px
+    top 24px 
+    right 24px
+    &:hover 
+      cursor pointer
+  &__wrap
+    display flex 
+    flex-direction: column 
+    gap 16px
+    +min(tablet)
+      gap 24px
+    font-weight: 500
+    a  
+      color #000000 
+      text-decoration: underline
+      &:hover 
+        color #FFDA16
+    &-download
+      padding-bottom 16px
+      border-bottom 1px solid #000000
+      display flex 
+      align-items center 
+      justify-content space-between 
+      text-decoration: none!important
+      width 100%
+      gap 20px
+      img 
+        width 24px
+        height 24px
+        +min(tablet)
+          width 36px
+          height 36px
+    p + .popup__wrap-download
+      margin-top 20px
+    .popup__wrap-download + .popup__wrap-download
+      margin-top 10px
+        
+    table 
+      tr 
+        &:not(&:first-child)
+          td 
+            border-top 12px solid #FFFFFF
+        td 
+          padding 20px
+          line-height: 32px
+          font-weight: 500
+          +max(1279px)
+            padding 6px 10px
+            line-height: 24px
+          &:first-child
+            background-color: #E9E9E9
+          &:last-child
+            text-align: center
+            width 20%
+            color #AA1D00
+            font-weight: 700
+            +max(1279px)
+              text-align: left
+            +max(767px)
+              width 35%
+  
+
+.popup::-webkit-scrollbar{
+    display: none;
+    width: 0;
+    height: 0
+}
+
+.popup::-webkit-scrollbar-track{
+    display: none;
+    background: 0 0;
+    width: 0;
+    height: 0
+}
+
+.popup::-webkit-scrollbar-thumb{
+    display: none;
+    border-radius: 20px;
+    border: 3px solid transparent;
+    width: 0;
+    height: 0
+}
+
+.popup {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent
+}
