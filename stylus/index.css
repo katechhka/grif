@@ -896,7 +896,7 @@ ul li:before {
   .popup {
     width: 100%;
     height: 100dvh;
-    padding: 40px 20px;
+    padding: 60px 20px;
   }
 }
 .popup._open {
