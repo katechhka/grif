@@ -681,12 +681,15 @@ ul
     &-item 
       padding 12px
       display flex 
+      flex-direction column
+      align-items center
       background-color: #E9E9E9
       gap 20px
       transition .5s ease
       +min(mobile)
         min-height: 120px
         width calc((100% - 24px)/2)
+        justify-content space-between
       +min(tablet)
         width calc((100% - 48px)/3)
       +min(tabletLarge)
@@ -706,9 +709,8 @@ ul
 
       span  
         font-weight: 600
-        margin-left: auto
-        align-self: flex-end
-        text-align: right
+        
+        text-align: center
       &>img 
         width 40px
         height 40px
